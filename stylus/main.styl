@@ -1,0 +1,102 @@
+// Colors
+sky_color = #0b81bf
+ground_color = #934515
+dark_color = #242424
+white_color = #fff
+grey_color = #454545
+
+// PFD sizes
+pfd_width = 500
+pfd_height = 500
+
+// Attitude sizes
+att_width = 232
+att_height = 254
+att_top = 116
+att_left = 112
+att_long_line = 90
+att_mid_line = 45
+att_short_line = 24
+att_line_height = 12
+
+// Speed sizes
+spd_width = 62
+spd_height = 374
+spd_top = 62
+spd_left = 28
+
+[role="pfd"]
+  background dark_color
+  width unit(pfd_width, 'px')
+  height unit(pfd_width, 'px')
+  overflow hidden
+  margin 40px
+  color white_color
+  position relative
+
+// Attitude
+.attitude-wrapper
+  position absolute
+  display block
+  top unit(att_top, 'px')
+  left unit(att_left, 'px')
+  width unit(att_width, 'px')
+  height unit(att_height, 'px')
+  border-radius 20px
+  z-index 100
+  overflow hidden
+.attitude
+  z-index 1
+  .sky, .ground
+    height unit(att_height, 'px')
+    margin-top unit(att_height/-4, 'px')
+    position relative
+    width unit(att_width*2, 'px')
+    margin-left unit(att_width/-2, 'px')
+  .sky
+    background sky_color
+    ul.attitude-line
+      position absolute
+      bottom 0
+      margin-bottom unit(att_height/4+att_line_height, 'px')
+      width unit(att_width*2, 'px')
+  .ground
+    background ground_color
+    border-top 2px solid white_color
+ul.attitude-line
+  margin  0
+  padding 0
+  li
+    margin 0 auto
+    height unit(att_line_height, 'px')
+    width unit(att_long_line, 'px')
+    list-style none
+    border-bottom 1px solid white_color
+    span
+      position absolute
+      margin-top 7px
+      font-size 12px
+      line-height 12px
+      &.left
+        margin-left -17px
+      &.right
+        margin-left 92px
+  li.small
+    width unit(att_short_line, 'px')
+  li.middle
+    width unit(att_mid_line, 'px')
+
+// Speed
+.speed-wrapper
+  display block
+  position absolute
+  top unit(spd_top, 'px')
+  left unit(spd_left, 'px')
+  width unit(spd_width, 'px')
+  height unit(spd_height, 'px')
+  background grey_color
+  overflow hidden
+
+[role="controls"]
+  float right
+  margin 40px

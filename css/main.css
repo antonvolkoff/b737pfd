@@ -1,0 +1,87 @@
+[role="pfd"] {
+  background: #242424;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  margin: 40px;
+  color: #fff;
+  position: relative;
+}
+.attitude-wrapper {
+  position: absolute;
+  display: block;
+  top: 116px;
+  left: 112px;
+  width: 232px;
+  height: 254px;
+  border-radius: 20px;
+  z-index: 100;
+  overflow: hidden;
+}
+.attitude {
+  z-index: 1;
+}
+.attitude .sky,
+.attitude .ground {
+  height: 254px;
+  margin-top: -63.5px;
+  position: relative;
+  width: 464px;
+  margin-left: -116px;
+}
+.attitude .sky {
+  background: #0b81bf;
+}
+.attitude .sky ul.attitude-line {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 75.5px;
+  width: 464px;
+}
+.attitude .ground {
+  background: #934515;
+  border-top: 2px solid #fff;
+}
+ul.attitude-line {
+  margin: 0;
+  padding: 0;
+}
+ul.attitude-line li {
+  margin: 0 auto;
+  height: 12px;
+  width: 90px;
+  list-style: none;
+  border-bottom: 1px solid #fff;
+}
+ul.attitude-line li span {
+  position: absolute;
+  margin-top: 7px;
+  font-size: 12px;
+  line-height: 12px;
+}
+ul.attitude-line li span.left {
+  margin-left: -17px;
+}
+ul.attitude-line li span.right {
+  margin-left: 92px;
+}
+ul.attitude-line li.small {
+  width: 24px;
+}
+ul.attitude-line li.middle {
+  width: 45px;
+}
+.speed-wrapper {
+  display: block;
+  position: absolute;
+  top: 62px;
+  left: 28px;
+  width: 62px;
+  height: 374px;
+  background: #454545;
+  overflow: hidden;
+}
+[role="controls"] {
+  float: right;
+  margin: 40px;
+}

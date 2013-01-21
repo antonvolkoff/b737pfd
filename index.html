@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Boeing 737NG PFD</title>
+	<meta name="description" content="Boeing 737NG Primary Flight Display">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/normalize.css" rel="stylesheet" media="all">
+	<link href="css/main.css" rel="stylesheet" media="all">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+</head>
+<body>
+	<section role="controls">
+		<label>Roll:</label>
+		<input type='text' id="roll" value="0">
+	</section>
+	<section role="pfd">
+		<div class="speed-wrapper"></div>
+		<div class="attitude-wrapper">
+			<div class="attitude" style="-webkit-transform: rotate(0deg);">
+				<div class="sky">
+					<ul class="attitude-line top">
+						<li><span class="left">40</span><span class="right">40</span></li>
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+						<li><span class="left">30</span><span class="right">30</span></li>
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+						<li><span class="left">20</span><span class="right">20</span></li>
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+						<li><span class="left">10</span><span class="right">10</span></li>
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+					</ul>
+				</div>
+				<div class="ground">
+					<ul class="attitude-line">
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+						<li><span class="left">10</span><span class="right">10</span></li>
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+						<li><span class="left">20</span><span class="right">20</span></li>
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+						<li><span class="left">30</span><span class="right">30</span></li>
+						<li class="small"></li>
+						<li class="middle"></li>
+						<li class="small"></li>
+						<li><span class="left">40</span><span class="right">40</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		$('#roll').keyup(function() {
+			var roll = $('#roll').val();
+			console.log($('#roll').val());
+			$('.attitude').css('-webkit-transform', "rotate("+roll+"deg)");
+			$('.attitude-wrapper').css('z-index', '999');
+		});
+	</script>
+</body>
+</html>
